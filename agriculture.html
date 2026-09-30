@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GreenRoot Agri Supply | Quality Agricultural Supplies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a href="#home" class="logo">GreenRoot <span>Agri Supply</span></a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+        <nav class="nav-links" id="nav-links" aria-label="Main">
+          <a href="#home">Home</a>
+          <a href="#products">Products</a>
+          <a href="#categories">Categories</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#resources">Resources</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="icon-btn" id="search-btn" aria-label="Search products">&#128269;</button>
+          <a href="#quote" class="btn btn-accent">Quote / Order <b id="cart-count">0</b>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <h1>Quality Agricultural Supplies. Reliable Growth.</h1>
+            <p>Seeds, fertilizer, feed, equipment and more, delivered in bulk to farms, retailers, processors and restaurants.</p>
+            <div class="btn-row">
+              <a href="#products" class="btn btn-accent">Browse Products</a>
+              <a href="#quote" class="btn btn-ghost">Request a Quote</a>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="categories">
+        <div class="container">
+          <h2>Shop by category</h2>
+          <div class="chips" id="category-chips"></div>
+        </div>
+      </section>
+
+      <section class="section alt" id="products">
+        <div class="container">
+          <h2>Product marketplace</h2>
+          <div class="toolbar">
+            <input type="search" id="search-input" placeholder="Search products" aria-label="Search products">
+            <select id="category-filter" aria-label="Category"></select>
+            <select id="availability-filter" aria-label="Availability">
+              <option value="all">Any availability</option>
+              <option value="In stock">In stock</option>
+              <option value="Limited">Limited</option>
+              <option value="Pre-order">Pre-order</option>
+            </select>
+            <select id="sort-select" aria-label="Sort">
+              <option value="featured">Featured</option>
+              <option value="name">Name A-Z</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+            </select>
+            <button class="btn btn-ghost dark" id="reset-filters">Reset</button>
+          </div>
+          <p id="result-count" class="muted" aria-live="polite"></p>
+          <div class="grid" id="product-grid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <h2>Supplier services</h2>
+          <div class="grid services">
+            <article class="card">
+              <h3>Bulk agricultural supply</h3>
+              <p>Pallet and container volumes at contract pricing.</p>
+            </article>
+            <article class="card">
+              <h3>Farm input distribution</h3>
+              <p>Seed, fertilizer and chemicals delivered before your season starts.</p>
+            </article>
+            <article class="card">
+              <h3>Equipment sourcing</h3>
+              <p>New and refurbished machinery matched to your acreage.</p>
+            </article>
+            <article class="card">
+              <h3>Wholesale supply</h3>
+              <p>Tiered pricing and credit terms for retailers.</p>
+            </article>
+            <article class="card">
+              <h3>Farm-to-business delivery</h3>
+              <p>Livestock products and produce moved to processors and kitchens.</p>
+            </article>
+            <article class="card">
+              <h3>Custom sourcing</h3>
+              <p>Tell us what you need and we will find it.</p>
+            </article>
+            <article class="card">
+              <h3>Agricultural consultation</h3>
+              <p>Agronomists advise on inputs, dosage and planning.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section green" id="quote">
+        <div class="container quote-wrap">
+          <div>
+            <h2>Bulk order and quote request</h2>
+            <p>Add products with the button on each card, set quantities, then send. We reply within one business day.</p>
+            <ul id="inquiry-list" class="inquiry-list"></ul>
+          </div>
+          <form id="quote-form" class="form" novalidate>
+            <label>Full name<input name="name" required>
+              <small class="error"></small>
+            </label>
+            <label>Email<input name="email" type="email" required>
+              <small class="error"></small>
+            </label>
+            <label>Delivery location<input name="location" required>
+              <small class="error"></small>
+            </label>
+            <label>Special requirements<textarea name="notes" rows="3"></textarea>
+            </label>
+            <button class="btn btn-accent" type="submit">Submit quote request</button>
+            <p id="quote-confirmation" class="confirmation" hidden></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <h2>Suppliers farmers rely on</h2>
+          <div class="stats">
+            <div>
+              <strong data-count="18">0</strong>years of experience</div>
+            <div>
+              <strong data-count="1200">0</strong>products supplied</div>
+            <div>
+              <strong data-count="9500">0</strong>farms and businesses served</div>
+            <div>
+              <strong data-count="24">0</strong>states covered</div>
+          </div>
+          <div class="badges">
+            <span>Certified seed dealer</span>
+            <span>ISO 9001</span>
+            <span>Verified supplier</span>
+          </div>
+          <div class="slider" id="testimonials" aria-live="polite">
+            <blockquote></blockquote>
+            <div class="slider-controls">
+              <button aria-label="Previous">&lsaquo;</button>
+              <button aria-label="Next">&rsaquo;</button>
+            </div>
+          </div>
+          <div class="partners">
+            <span>AgroNova</span>
+            <span>TerraFeed</span>
+            <span>HarvestTech</span>
+            <span>AquaDrip</span>
+            <span>SeedWell</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="resources">
+        <div class="container">
+          <h2>Agricultural resources</h2>
+          <div class="grid services">
+            <article class="card">
+              <h3>Farming guides</h3>
+              <p>Step-by-step crop guides from land prep to harvest.</p>
+            </article>
+            <article class="card">
+              <h3>Seasonal planting tips</h3>
+              <p>What to sow now, by region and rainfall.</p>
+            </article>
+            <article class="card">
+              <h3>Product usage guides</h3>
+              <p>Correct dosage and safety for fertilizers and chemicals.</p>
+            </article>
+            <article class="card">
+              <h3>Agricultural news</h3>
+              <p>Market prices, policy and weather updates.</p>
+            </article>
+            <article class="card">
+              <h3>Farm management tips</h3>
+              <p>Record keeping, budgeting and input planning.</p>
+            </article>
+            <article class="card">
+              <h3>Supplier updates</h3>
+              <p>New arrivals, price changes and stock alerts.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="delivery">
+        <div class="container">
+          <h2>Delivery and logistics</h2>
+          <ol class="steps">
+            <li>
+              <b>Order</b>Submit a quote and confirm quantities.</li>
+            <li>
+              <b>Handling</b>Bulk goods are palletised and inspected.</li>
+            <li>
+              <b>Dispatch</b>You get a tracking code by email or WhatsApp.</li>
+            <li>
+              <b>Delivery</b>Typical lead time is 2 to 5 days in covered areas, 5 to 10 for remote areas.</li>
+          </ol>
+          <h3>Frequently asked</h3>
+          <div class="faq">
+            <button class="faq-q" aria-expanded="false">What is the minimum order?</button>
+            <div class="faq-a">
+              <p>Retail packs have no minimum. Wholesale pricing starts at 1 pallet.</p>
+            </div>
+            <button class="faq-q" aria-expanded="false">Can I track my order?</button>
+            <div class="faq-a">
+              <p>Yes. Each dispatch includes a tracking code with live status updates.</p>
+            </div>
+            <button class="faq-q" aria-expanded="false">Do you deliver to remote farms?</button>
+            <div class="faq-a">
+              <p>Yes. Remote delivery adds 3 to 5 days and is quoted per route.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="contact">
+        <div class="container contact-grid">
+          <div>
+            <h2>Contact us</h2>
+            <p>Phone: +234 800 000 0000<br>
+              Email: sales@greenroot.example<br>
+              Address: 12 Farm Road, Ikeja, Lagos<br>
+              Hours: Mon to Sat, 8am to 6pm</p>
+            <a class="btn btn-accent" href="https://wa.me/2348000000000" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            <div class="map-placeholder">Interactive map placeholder</div>
+          </div>
+          <form id="contact-form" class="form" novalidate>
+            <label>Name<input name="name" required>
+              <small class="error"></small>
+            </label>
+            <label>Email<input name="email" type="email" required>
+              <small class="error"></small>
+            </label>
+            <label>Message<textarea name="message" rows="4" required></textarea>
+              <small class="error"></small>
+            </label>
+            <button class="btn btn-accent" type="submit">Send message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">&copy; 2026 GreenRoot Agri Supply. All rights reserved.</div>
+    </footer>
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+      <div class="modal-box">
+        <button class="modal-close" aria-label="Close">&times;</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
